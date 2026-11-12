@@ -36,7 +36,7 @@ Tujuan proyek ini adalah:
 
 ## 2. Data Source
 
-Dataset yang digunakan adalah **`household_power_consumption.csv`** dari [Kaggle – 240,000+ Household Electricity Consumption Records](https://www.kaggle.com/datasets/thedevastator/240000-household-electricity-consumption-records), sesuai tautan sumber yang tercantum pada presentasi proyek.
+Dataset yang digunakan adalah **`household_power_consumption.csv`** dari [Kaggle - Household Electricity Consumption Records](https://www.kaggle.com/datasets/thedevastator/240000-household-electricity-consumption-records), sesuai tautan sumber yang tercantum pada presentasi proyek.
 
 | Karakteristik | Nilai |
 |---|---:|
