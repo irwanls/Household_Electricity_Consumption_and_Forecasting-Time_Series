@@ -154,29 +154,10 @@ Pola ini mengindikasikan siklus konsumsi berulang dalam **24 jam**. Analisis ACF
 
 ---
 
-## 5. Dashboard Visualization
 
-Dashboard Power BI terdiri dari dua tampilan utama, yaitu **Day Consumption** dan **Day Projection**.
+## 5. Forecasting Methodology
 
-### Day Consumption
-
-![Dashboard - Day Consumption](assets/dashboard_consumption.png)
-
-Halaman ini menampilkan ringkasan intensitas listrik, sub-metering, proporsi beban, rata-rata daya berdasarkan hari, dan tren rata-rata daya berdasarkan jam.
-
-### Day Projection
-
-![Dashboard - Day Projection](assets/dashboard_forecasting.png)
-
-Halaman ini menampilkan model terbaik, MAE, rata-rata daya aktual dan prediksi, tren daya beserta proyeksi, kesalahan model per jam, serta perbandingan MAE antarmodel.
-
-*Gambar dashboard diambil dari halaman 20 presentasi proyek.*
-
----
-
-## 6. Forecasting Methodology
-
-### 6.1 Time-Based Data Split
+### 5.1 Time-Based Data Split
 
 Data dibagi secara **kronologis** agar urutan waktu tetap terjaga dan informasi masa depan tidak digunakan secara tidak sengaja untuk membangun prediksi masa lalu.
 
@@ -186,7 +167,7 @@ Data dibagi secara **kronologis** agar urutan waktu tetap terjaga dan informasi 
 | Validation | 16% |
 | Testing | 20% |
 
-### 6.2 Stationarity Test (ADF)
+### 5.2 Stationarity Test (ADF)
 
 Uji *Augmented Dickey-Fuller* dilakukan pada data training:
 
@@ -198,7 +179,7 @@ Uji *Augmented Dickey-Fuller* dilakukan pada data training:
 
 Karena p-value lebih kecil dari 0,05, hipotesis nol adanya *unit root* ditolak pada seri training yang diuji. Hasil ADF ini merupakan satu indikator, bukan jaminan bahwa seluruh sifat statistik data tidak berubah sepanjang periode.
 
-### 6.3 Model Comparison
+### 5.3 Model Comparison
 
 Tiga pendekatan yang dibandingkan adalah:
 
@@ -208,7 +189,7 @@ Tiga pendekatan yang dibandingkan adalah:
 
 Beberapa konfigurasi SARIMA dan XGBoost diuji sebelum evaluasi model terpilih pada data testing.
 
-### 6.4 Test-Set Performance
+### 5.4 Test-Set Performance
 
 Metrik evaluasi utama adalah **Mean Absolute Error (MAE)**. Nilai lebih rendah menunjukkan rata-rata kesalahan absolut prediksi yang lebih kecil.
 
@@ -220,7 +201,7 @@ Metrik evaluasi utama adalah **Mean Absolute Error (MAE)**. Nilai lebih rendah m
 
 **XGBoost dipilih** karena memberikan MAE terendah pada data testing dalam perbandingan yang dilaporkan.
 
-### 6.5 Error Analysis by Hour
+### 5.5 Error Analysis by Hour
 
 Performa XGBoost berbeda berdasarkan jam:
 
@@ -229,7 +210,7 @@ Performa XGBoost berbeda berdasarkan jam:
 
 Model cenderung lebih sulit memprediksi konsumsi pada jam malam yang juga memiliki rata-rata penggunaan daya tinggi. Hal ini perlu diperhatikan saat hasil prediksi digunakan sebagai bahan perencanaan beban.
 
-### 6.6 July 2007 Forecast
+### 5.6 July 2007 Forecast
 
 | Indikator | Hasil |
 |---|---:|
@@ -240,7 +221,7 @@ Proyeksi menunjukkan pola daya yang berulang dengan rata-rata sedikit lebih ting
 
 ---
 
-## 7. Key Findings & Conclusion
+## 6. Key Findings & Conclusion
 
 1. Konsumsi listrik memperlihatkan **pola harian yang jelas**; penggunaan tertinggi secara rata-rata muncul sekitar pukul 21:00.
 2. Arus maksimum **46,4 A** terjadi bersamaan dengan peningkatan pengukuran pada beberapa kelompok beban.
@@ -250,7 +231,7 @@ Proyeksi menunjukkan pola daya yang berulang dengan rata-rata sedikit lebih ting
 
 ---
 
-## 8. Recommendations
+## 7. Recommendations
 
 ### 1. Periksa kesiapan instalasi untuk beban puncak
 
@@ -270,7 +251,7 @@ Pantau gangguan pencatatan, identifikasi gap secara dini, dan dokumentasikan met
 
 ---
 
-## 9. Limitations
+## 8. Limitations
 
 - **Penyebab lonjakan arus belum terbukti secara kausal.** Sub-metering menunjukkan pola kelompok beban, bukan identifikasi perangkat individual secara pasti.
 - **Missing values terkonsentrasi dalam gap panjang.** Penanganannya dapat memengaruhi hasil model dan perlu dijelaskan dalam kode pemodelan.
@@ -279,7 +260,7 @@ Pantau gangguan pencatatan, identifikasi gap secara dini, dan dokumentasikan met
 
 ---
 
-## 10. Tools
+## 9. Tools
 
 - **Python / Jupyter Notebook** – data preparation, EDA, analisis time series, dan eksperimen forecasting.
 - **Power BI** – dashboard dan data storytelling.
