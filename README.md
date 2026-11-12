@@ -251,16 +251,8 @@ Pantau gangguan pencatatan, identifikasi gap secara dini, dan dokumentasikan met
 
 ---
 
-## 8. Limitations
 
-- **Penyebab lonjakan arus belum terbukti secara kausal.** Sub-metering menunjukkan pola kelompok beban, bukan identifikasi perangkat individual secara pasti.
-- **Missing values terkonsentrasi dalam gap panjang.** Penanganannya dapat memengaruhi hasil model dan perlu dijelaskan dalam kode pemodelan.
-- **Hasil forecasting menunjukkan perkiraan daya, bukan penghematan biaya yang telah terealisasi.** Perhitungan kWh dan biaya membutuhkan agregasi durasi serta informasi tarif listrik.
-- **Evaluasi yang dilaporkan terbatas pada data dan skenario pengujian dalam proyek ini.** Akurasi untuk rumah atau periode lain memerlukan validasi tambahan.
-
----
-
-## 9. Tools
+## 8. Tools
 
 - **Python / Jupyter Notebook** – data preparation, EDA, analisis time series, dan eksperimen forecasting.
 - **Power BI** – dashboard dan data storytelling.
