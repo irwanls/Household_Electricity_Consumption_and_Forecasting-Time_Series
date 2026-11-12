@@ -8,7 +8,6 @@ Hasil analisis divisualisasikan dalam dashboard Power BI untuk membantu pengguna
 
 > **Hasil utama:** XGBoost memperoleh **MAE 0,3830 kW** pada data testing, lebih rendah dibandingkan SARIMA (0,4359 kW) dan Seasonal Naive (0,6064 kW). Model terpilih menghasilkan proyeksi rata-rata daya **1,23 kW** untuk Juli 2007.
 
-**[Lihat presentasi proyek](presentation/Final_Project.pdf)**
 
 ---
 
